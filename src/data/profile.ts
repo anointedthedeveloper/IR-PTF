@@ -9,8 +9,8 @@ export const profile = {
   email: "",
   linkedin: "", // e.g. "https://www.linkedin.com/in/username"
 
-  role: "International Relations student",
-  openTo: ["Internships", "Fellowships", "Research collaborations"],
+  role: "International Relations graduate",
+  openTo: ["Graduate roles", "Fellowships", "Research collaborations"],
 
   specializations: [
     {
@@ -42,7 +42,7 @@ export const profile = {
       takeaways: [
         "Saw how a legislative-support institution works day to day",
         "Practised formal, professional communication and protocol",
-        "Connected classroom theory to real public-sector practice",
+        "Connected academic training to real public-sector practice",
       ],
     },
   ],
@@ -72,8 +72,8 @@ export const profile = {
   ],
 
   about: [
-    "I'm an International Relations student drawn to the moments when people at odds choose to talk. My focus is diplomacy, negotiation and peace and conflict resolution: how disagreements are managed, how trust is built, and how agreements hold.",
-    "In August 2025 I interned at the National Assembly Service Commission in Abuja, which gave me a close view of public institutions at work. I'm looking to keep learning through internships, fellowships and research that put theory into practice.",
+    "I'm an International Relations graduate drawn to the moments when people at odds choose to talk. My focus is diplomacy, negotiation and peace and conflict resolution: how disagreements are managed, how trust is built, and how agreements hold.",
+    "In August 2025 I interned at the National Assembly Service Commission in Abuja, which gave me a close view of public institutions at work. I'm now looking to put that training to work through graduate roles, fellowships and research in diplomacy, negotiation and peacebuilding.",
   ],
 
   peace: [

@@ -2,7 +2,7 @@ import { profile } from "../data/profile";
 
 export default function About() {
   const facts: [string, string][] = [
-    ["Studying", "International Relations"],
+    ["Background", "International Relations graduate"],
     ["Focus", "Diplomacy · Negotiation · Peace & Conflict"],
     ["Experience", `${profile.experience[0].org}, ${profile.experience[0].date}`],
     ["Open to", profile.openTo.join(", ")],

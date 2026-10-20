@@ -18,7 +18,7 @@ export default function Rail() {
           <a href="#top" className="flex items-center gap-3 group" aria-label="Back to top">
             <Monogram className="w-11 h-11 text-paper group-hover:rotate-12 transition-transform" />
             <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-paper/65 leading-snug">
-              Student<br />Portfolio
+              Professional<br />Portfolio
             </span>
           </a>
 

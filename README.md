@@ -1,6 +1,6 @@
 # International Relations Portfolio
 
-A single-page portfolio for an International Relations student specialising in
+A single-page portfolio for an International Relations graduate specialising in
 **diplomacy, negotiation skills, and peace & conflict resolution**.
 
 Built with React, TypeScript, Vite and Tailwind CSS v4.

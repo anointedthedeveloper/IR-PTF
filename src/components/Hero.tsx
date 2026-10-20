@@ -12,7 +12,7 @@ export default function Hero() {
         <div className="order-2 lg:order-1">
           <div className="reveal font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-clay flex items-center gap-3">
             <span className="w-10 h-px bg-clay" />
-            International Relations · Student portfolio
+            International Relations · Graduate
           </div>
 
           <h1 className="font-display text-[clamp(3.6rem,10.5vw,8.4rem)] leading-[0.9] mt-6">

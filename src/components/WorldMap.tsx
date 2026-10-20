@@ -85,7 +85,7 @@ export default function WorldMap() {
             </h2>
           </div>
           <p className="text-lg text-paper/70 leading-relaxed">
-            It started in Abuja, inside a national institution. The rooms I'm preparing for sit in cities like New York, Geneva and Addis Ababa, where states and peoples come to the table.
+            It started in Abuja, inside a national institution. The rooms I want to work in sit in cities like New York, Geneva and Addis Ababa, where states and peoples come to the table.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function WorldMap() {
 
         <ul className="reveal mt-8 flex flex-wrap gap-x-10 gap-y-3 font-mono text-xs tracking-[0.16em] uppercase text-paper/60" style={{ ["--d" as string]: "160ms" }}>
           <li className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-clay" /> Where I started</li>
-          <li className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-paper" /> Diplomacy hubs I'm studying</li>
+          <li className="flex items-center gap-3"><span className="w-3 h-3 rounded-full bg-paper" /> Diplomacy hubs I follow</li>
         </ul>
       </div>
     </section>

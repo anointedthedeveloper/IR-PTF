@@ -8,7 +8,7 @@ export default function Focus() {
   return (
     <section id="focus" className="px-6 md:px-12 lg:px-16 py-20 md:py-32">
       <div className="max-w-[1150px] mx-auto">
-        <div className="reveal grid md:grid-cols-[1fr_1.1fr] gap-6 md:gap-16 items-end mb-12 md:mb-16">
+        <div className="reveal grid xl:grid-cols-[1fr_1.1fr] gap-6 xl:gap-16 items-end mb-12 md:mb-16">
           <div>
             <div className="font-mono text-xs tracking-[0.22em] uppercase text-clay">01 — Specialization</div>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.98] mt-4">Where I focus</h2>

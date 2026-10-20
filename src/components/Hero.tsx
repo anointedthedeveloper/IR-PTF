@@ -5,11 +5,11 @@ const RING = "DIPLOMACY • NEGOTIATION • PEACE & CONFLICT • ";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative min-h-svh flex items-center overflow-hidden pt-24 pb-16 lg:pt-10 px-6 md:px-12 lg:px-16">
+    <section id="top" className="relative min-h-svh flex items-center overflow-hidden pt-24 lg:pt-14 pb-16 xl:pt-10 px-6 md:px-12 lg:px-16">
       <Graticule className="absolute -right-40 top-1/2 -translate-y-1/2 w-[760px] max-w-none text-forest/10 spin-slower" />
 
-      <div className="relative max-w-[1150px] mx-auto w-full grid lg:grid-cols-[1.2fr_0.8fr] gap-14 lg:gap-8 items-center">
-        <div className="order-2 lg:order-1">
+      <div className="relative max-w-[1150px] mx-auto w-full grid xl:grid-cols-[1.2fr_0.8fr] gap-14 xl:gap-8 items-center">
+        <div className="order-2 xl:order-1">
           <div className="reveal font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-clay flex items-center gap-3">
             <span className="w-10 h-px bg-clay" />
             International Relations · Graduate
@@ -46,8 +46,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="order-1 lg:order-2 reveal flex justify-center lg:justify-end" style={{ ["--d" as string]: "120ms" }}>
-          <div className="relative w-[min(290px,68vw)] sm:w-[min(340px,78vw)] lg:w-[min(400px,100%)]">
+        <div className="order-1 xl:order-2 reveal flex justify-center xl:justify-end" style={{ ["--d" as string]: "120ms" }}>
+          <div className="relative w-[min(290px,68vw)] sm:w-[min(340px,78vw)] xl:w-[min(400px,100%)]">
             <div className="absolute inset-0 translate-x-4 translate-y-4 rounded-t-[999px] rounded-b-3xl border border-forest/40" aria-hidden="true" />
             <div className="relative aspect-[3/4] rounded-t-[999px] rounded-b-3xl overflow-hidden bg-paper-deep shadow-2xl">
               <img

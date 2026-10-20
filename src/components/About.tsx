@@ -10,8 +10,8 @@ export default function About() {
 
   return (
     <section id="about" className="px-6 md:px-12 lg:px-16 py-20 md:py-32 bg-paper-deep">
-      <div className="max-w-[1150px] mx-auto grid lg:grid-cols-[0.85fr_1.15fr] gap-14 lg:gap-20 items-center">
-        <div className="reveal relative mx-auto w-[min(380px,82vw)] lg:w-full">
+      <div className="max-w-[1150px] mx-auto grid xl:grid-cols-[0.85fr_1.15fr] gap-14 xl:gap-20 items-center">
+        <div className="reveal relative mx-auto w-[min(380px,82vw)] xl:w-full">
           <div className="absolute inset-0 -rotate-6 rounded-[28px] bg-forest" aria-hidden="true" />
           <figure className="relative rotate-2 rounded-[28px] overflow-hidden bg-paper p-3 shadow-2xl">
             <img

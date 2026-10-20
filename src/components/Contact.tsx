@@ -68,7 +68,7 @@ export default function Contact() {
       </div>
 
       <div className="relative max-w-[1150px] mx-auto">
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-20">
+        <div className="grid xl:grid-cols-[1.1fr_0.9fr] gap-14 xl:gap-20">
           <div>
             <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">06 — Contact</div>
             <h2 className="reveal font-display text-[clamp(3rem,7.5vw,6.5rem)] leading-[0.96] mt-4" style={{ ["--d" as string]: "60ms" }}>

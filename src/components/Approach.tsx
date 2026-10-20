@@ -12,7 +12,7 @@ export default function Approach() {
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+        <div className="grid md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-5 md:gap-6">
           {profile.principles.map((p, i) => (
             <article
               key={p.title}
@@ -36,7 +36,7 @@ export default function Approach() {
           <div className="reveal flex items-end justify-between gap-6 mb-8">
             <h3 className="font-display text-4xl md:text-6xl leading-[1]">What I bring <em className="text-clay">to the table</em></h3>
           </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-ink/15 border border-ink/15 rounded-[24px] overflow-hidden">
+          <ul className="grid sm:grid-cols-2 xl:grid-cols-3 gap-px bg-ink/15 border border-ink/15 rounded-[24px] overflow-hidden">
             {profile.toolkit.map((t, i) => (
               <li key={t.title} className="reveal bg-paper p-7 md:p-8 flex gap-5 hover:bg-paper-deep transition-colors" style={{ ["--d" as string]: `${(i % 3) * 80}ms` }}>
                 <span className="w-12 h-12 shrink-0 rounded-2xl bg-forest text-sage flex items-center justify-center">

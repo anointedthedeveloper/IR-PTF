@@ -6,9 +6,10 @@ export const profile = {
   monogram: "AT",
 
   // Contact details. Anything left empty is hidden on the site.
-  email: "", // shows an email button and enables the mailto fallback
-  whatsapp: "", // digits only with country code, e.g. "2348012345678"
-  linkedin: "", // e.g. "https://www.linkedin.com/in/username"
+  email: "Joyfultestimony14@gmail.com", // shows an email button and enables the mailto fallback
+  phone: "+234 815 399 1658", // shown as a call card
+  whatsapp: "2348153991658", // digits only with country code
+  linkedin: "https://ng.linkedin.com/in/agunloye-testimony-ayomipo-a8a771267",
   cvUrl: "", // e.g. "/Agunloye-Ayomipo-CV.pdf" (put the file in /public)
   // Free form backend: get a key at https://web3forms.com (enter her email there).
   // With a key, the form delivers straight to her inbox without opening an email app.

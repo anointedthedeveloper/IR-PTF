@@ -12,7 +12,7 @@ All personal content lives in [`src/data/profile.ts`](src/data/profile.ts):
 | Field | What it controls |
 | --- | --- |
 | `name`, `shortName`, `monogram` | Name in the hero, side rail, footer and monogram |
-| `email`, `whatsapp`, `linkedin`, `cvUrl` | Contact cards, header icons and the CV button. **All empty right now**; each appears as soon as it is filled in |
+| `email`, `whatsapp`, `linkedin`, `cvUrl` | Contact cards, header icons and the CV button. Set for Agunloye Ayomipo Testimony; each card is hidden if you empty its field |
 | `web3formsKey` | Makes the contact form deliver straight to her inbox (see below) |
 | `specializations` | The three expandable focus areas |
 | `experience` | The "Field notes" placement card and stamp |

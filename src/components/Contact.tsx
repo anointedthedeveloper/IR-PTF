@@ -1,6 +1,6 @@
 import { FormEvent, useState, type ReactNode } from "react";
 import { initials, profile } from "../data/profile";
-import { Arrow, LinkedIn, Mail, WhatsApp } from "./Icons";
+import { Arrow, Copy, LinkedIn, Mail, Phone, WhatsApp } from "./Icons";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -10,6 +10,7 @@ const label = "font-mono text-[11px] tracking-[0.2em] uppercase text-paper/55";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+  const [copied, setCopied] = useState(false);
   const hasForm = Boolean(profile.web3formsKey || profile.email);
   const wa = profile.whatsapp.replace(/\D/g, "");
 
@@ -49,8 +50,19 @@ export default function Contact() {
     }
   }
 
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(profile.email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2200);
+    } catch {
+      window.prompt("Copy this email address:", profile.email);
+    }
+  }
+
   const channels = [
-    profile.email && { icon: <Mail className="w-5 h-5" />, name: "Email", value: profile.email, href: `mailto:${profile.email}` },
+    profile.email && { icon: <Mail className="w-5 h-5" />, name: "Email", value: profile.email, href: `mailto:${profile.email}`, copy: true },
+    profile.phone && { icon: <Phone className="w-5 h-5" />, name: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/[^\d+]/g, "")}` },
     wa && {
       icon: <WhatsApp className="w-5 h-5" />,
       name: "WhatsApp",
@@ -59,7 +71,7 @@ export default function Contact() {
       ext: true,
     },
     profile.linkedin && { icon: <LinkedIn className="w-5 h-5" />, name: "LinkedIn", value: profile.shortName, href: profile.linkedin, ext: true },
-  ].filter(Boolean) as { icon: ReactNode; name: string; value: string; href: string; ext?: boolean }[];
+  ].filter(Boolean) as { icon: ReactNode; name: string; value: string; href: string; ext?: boolean; copy?: boolean }[];
 
   return (
     <section id="contact" className="relative bg-forest text-paper px-6 md:px-12 lg:px-16 pt-14 md:pt-32 pb-10 overflow-hidden">
@@ -68,8 +80,8 @@ export default function Contact() {
       </div>
 
       <div className="relative max-w-[1150px] mx-auto">
-        <div className="grid xl:grid-cols-[1.1fr_0.9fr] gap-14 xl:gap-20">
-          <div>
+        <div className="grid grid-cols-1 xl:grid-cols-[1.1fr_0.9fr] gap-14 xl:gap-20">
+          <div className="min-w-0">
             <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">06 — Contact</div>
             <h2 className="reveal font-display text-[clamp(3rem,7.5vw,6.5rem)] leading-[0.96] mt-4" style={{ ["--d" as string]: "60ms" }}>
               Let's find <em className="text-clay">common ground.</em>
@@ -81,19 +93,30 @@ export default function Contact() {
             {channels.length > 0 && (
               <ul className="reveal mt-10 space-y-3 max-w-md" style={{ ["--d" as string]: "180ms" }}>
                 {channels.map((c) => (
-                  <li key={c.name}>
+                  <li key={c.name} className="flex items-stretch gap-2">
                     <a
                       href={c.href}
                       {...(c.ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="group flex items-center gap-4 rounded-2xl border border-paper/20 px-5 py-4 hover:bg-paper hover:text-forest hover:border-paper transition"
+                      className="group flex flex-1 min-w-0 items-center gap-4 rounded-2xl border border-paper/20 px-5 py-4 hover:bg-paper hover:text-forest hover:border-paper transition"
                     >
                       <span className="w-11 h-11 rounded-full bg-paper/10 group-hover:bg-forest/10 flex items-center justify-center shrink-0">{c.icon}</span>
                       <span className="min-w-0 flex-1">
                         <span className="block font-mono text-[11px] tracking-[0.2em] uppercase opacity-60">{c.name}</span>
-                        <span className="block font-semibold text-lg truncate">{c.value}</span>
+                        <span className="block font-semibold text-[17px] leading-snug break-all">{c.value}</span>
                       </span>
-                      <Arrow className="w-5 h-5 opacity-60 group-hover:translate-x-1 transition" />
+                      {!c.copy && <Arrow className="w-5 h-5 opacity-60 group-hover:translate-x-1 transition shrink-0" />}
                     </a>
+                    {c.copy && (
+                      <button
+                        type="button"
+                        onClick={copyEmail}
+                        aria-label="Copy email address"
+                        className="shrink-0 w-[68px] rounded-2xl border border-paper/20 flex flex-col items-center justify-center gap-1 text-paper/80 hover:bg-paper hover:text-forest transition"
+                      >
+                        <Copy className="w-5 h-5" />
+                        <span className="font-mono text-[10px] tracking-[0.12em] uppercase">{copied ? "Copied" : "Copy"}</span>
+                      </button>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -107,7 +130,7 @@ export default function Contact() {
           </div>
 
           {hasForm ? (
-            <form className="reveal space-y-7" style={{ ["--d" as string]: "120ms" }} onSubmit={onSubmit}>
+            <form className="reveal space-y-7 min-w-0" style={{ ["--d" as string]: "120ms" }} onSubmit={onSubmit}>
               <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
               <label className="block">
                 <span className={label}>Your name</span>

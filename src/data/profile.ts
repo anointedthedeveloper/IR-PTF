@@ -1,0 +1,86 @@
+// Everything personal lives here. Edit this file and the whole site updates.
+
+export const profile = {
+  // TODO: replace with her real details
+  name: "Your Name",
+  email: "your.email@example.com",
+  linkedin: "", // e.g. "https://www.linkedin.com/in/username" (hidden when empty)
+
+  headline: "Negotiating a more peaceful world.",
+  role: "International Relations student",
+  openTo: ["Internships", "Fellowships", "Research collaborations"],
+
+  specializations: [
+    {
+      title: "Diplomacy",
+      body: "The craft of representing interests and building relationships across borders, cultures and institutions, where tone, timing and trust matter as much as the argument.",
+      topics: ["Foreign policy", "Statecraft", "Multilateralism", "Protocol"],
+    },
+    {
+      title: "Negotiation Skills",
+      body: "Moving from positions to interests: preparing carefully, listening closely and designing agreements that every side can live with and actually keep.",
+      topics: ["Interest-based bargaining", "Persuasion", "Mediation", "Strategic communication"],
+    },
+    {
+      title: "Peace & Conflict Resolution",
+      body: "Understanding why conflicts start, escalate and end, and what makes peace last once the talking is over.",
+      topics: ["Conflict analysis", "Peacebuilding", "Dialogue", "Post-conflict recovery"],
+    },
+  ],
+
+  experience: [
+    {
+      role: "Intern",
+      org: "National Assembly Service Commission",
+      place: "Abuja, Nigeria",
+      date: "August 2025",
+      stamp: "AUG 2025",
+      summary:
+        "An internship placement inside the National Assembly Service Commission, a first-hand look at how a public institution at the heart of Nigeria's legislature actually runs.",
+      takeaways: [
+        "Saw how a legislative-support institution works day to day",
+        "Practised formal, professional communication and protocol",
+        "Connected classroom theory to real public-sector practice",
+      ],
+    },
+  ],
+
+  principles: [
+    {
+      title: "Listen first",
+      body: "Good negotiators ask more than they tell. Understanding what the other side truly needs opens doors that force never will.",
+    },
+    {
+      title: "Interests over positions",
+      body: "Behind every demand sits a need. Finding it turns a zero-sum argument into a problem both sides want to solve.",
+    },
+    {
+      title: "Peace is a process",
+      body: "Lasting peace is built through trust, institutions and patience. It is rarely signed away in a single day.",
+    },
+  ],
+
+  about: [
+    "I'm an International Relations student drawn to the moments when people at odds choose to talk. My focus is diplomacy, negotiation and peace and conflict resolution: how disagreements are managed, how trust is built, and how agreements hold.",
+    "In August 2025 I interned at the National Assembly Service Commission in Abuja, which gave me a close view of public institutions at work. I'm looking to keep learning through internships, fellowships and research that put theory into practice.",
+  ],
+
+  peace: [
+    "Peace", "Alaafia", "Paix", "Amani", "Paz", "Udo", "Frieden", "Shalom", "Salaam", "Zaman lafiya", "和平",
+  ],
+};
+
+export const nav = [
+  { id: "focus", label: "Focus" },
+  { id: "experience", label: "Experience" },
+  { id: "approach", label: "Approach" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
+export const initials = profile.name
+  .split(" ")
+  .map((p) => p[0])
+  .slice(0, 2)
+  .join("")
+  .toUpperCase();

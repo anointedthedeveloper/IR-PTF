@@ -12,7 +12,8 @@ All personal content lives in [`src/data/profile.ts`](src/data/profile.ts):
 | Field | What it controls |
 | --- | --- |
 | `name`, `shortName`, `monogram` | Name in the hero, side rail, footer and monogram |
-| `email`, `linkedin` | Contact buttons and the "Send message" form. **Both are empty right now**; the form and buttons appear as soon as you fill them in |
+| `email`, `whatsapp`, `linkedin`, `cvUrl` | Contact cards, header icons and the CV button. **All empty right now**; each appears as soon as it is filled in |
+| `web3formsKey` | Makes the contact form deliver straight to her inbox (see below) |
 | `specializations` | The three expandable focus areas |
 | `experience` | The "Field notes" placement card and stamp |
 | `principles`, `toolkit`, `about` | Approach cards, "What I bring" grid and the About text |
@@ -37,3 +38,19 @@ The share-preview image URL uses `VERCEL_PROJECT_PRODUCTION_URL`; set `SITE_URL`
 
 The dotted map in the "World" section is generated data (`src/data/worldMap.ts`).
 Regenerate it, or change the hub cities, with `node scripts/gen-map.mjs`.
+
+## Contact form setup (2 minutes)
+
+The form works in two modes:
+
+1. **Inbox delivery (recommended):** go to [web3forms.com](https://web3forms.com), enter her email,
+   and copy the access key they send. In Vercel add an environment variable
+   `VITE_WEB3FORMS_KEY` with that key (or paste it into `web3formsKey` in `profile.ts`), then redeploy.
+   Messages land in her inbox and visitors see an on-page "Message sent" confirmation.
+2. **Email-app fallback:** if only `email` is set, the form opens the visitor's email app with the message pre-filled.
+
+A hidden honeypot field blocks most spam bots.
+
+## CV
+
+Put her CV in `public/` (for example `public/Agunloye-Ayomipo-CV.pdf`) and set `cvUrl: "/Agunloye-Ayomipo-CV.pdf"`.

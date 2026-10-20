@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { initials, nav, profile } from "../data/profile";
 import { useActiveSection, useScrollProgress } from "../hooks";
-import { LinkedIn, Mail, Monogram } from "./Icons";
+import { LinkedIn, Mail, WhatsApp } from "./Icons";
 
 const ids = nav.map((n) => n.id);
 
@@ -16,7 +16,7 @@ export default function Rail() {
       <aside className="hidden lg:flex fixed inset-y-0 left-0 w-[290px] bg-forest text-paper flex-col justify-between p-9 z-40">
         <div>
           <a href="#top" className="flex items-center gap-3 group" aria-label="Back to top">
-            <Monogram className="w-11 h-11 text-paper group-hover:rotate-12 transition-transform" />
+            <img src="/images/avatar.jpg" alt="" width={48} height={48} className="w-12 h-12 rounded-full object-cover object-top ring-2 ring-paper/30 group-hover:ring-clay transition" />
             <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-paper/65 leading-snug">
               Professional<br />Portfolio
             </span>
@@ -66,13 +66,19 @@ export default function Rail() {
                 <Mail className="w-5 h-5" />
               </a>
             )}
-            <a href="#contact" className="text-sm font-semibold underline underline-offset-4 decoration-paper/30 hover:decoration-clay transition">Get in touch</a>
+
+            {profile.whatsapp && (
+              <a href={`https://wa.me/${profile.whatsapp.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="w-11 h-11 rounded-full border border-paper/25 flex items-center justify-center hover:bg-paper hover:text-forest transition">
+                <WhatsApp className="w-5 h-5" />
+              </a>
+            )}
             {profile.linkedin && (
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-11 h-11 rounded-full border border-paper/25 flex items-center justify-center hover:bg-paper hover:text-forest transition">
                 <LinkedIn className="w-5 h-5" />
               </a>
             )}
           </div>
+          <a href="#contact" className="inline-block text-sm font-semibold underline underline-offset-4 decoration-paper/30 hover:decoration-clay transition">Get in touch</a>
         </div>
       </aside>
 
@@ -81,7 +87,7 @@ export default function Rail() {
         <div className="absolute top-0 left-0 h-[3px] bg-clay origin-left w-full" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
         <div className="flex items-center justify-between px-5 h-16 bg-forest/95 backdrop-blur text-paper">
           <a href="#top" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-            <Monogram className="w-9 h-9" />
+            <img src="/images/avatar.jpg" alt="" width={36} height={36} className="w-9 h-9 rounded-full object-cover object-top ring-2 ring-paper/30" />
             <span className="font-display text-2xl">{profile.shortName}</span>
           </a>
           <button

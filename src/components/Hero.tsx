@@ -38,6 +38,11 @@ export default function Hero() {
             <a href="#contact" className="group inline-flex items-center justify-center gap-3 rounded-full border border-ink/25 px-8 py-4 font-semibold hover:border-ink hover:bg-ink hover:text-paper transition">
               Get in touch <Arrow className="w-5 h-5 group-hover:translate-x-1 transition" />
             </a>
+            {profile.cvUrl && (
+              <a href={profile.cvUrl} download className="inline-flex items-center justify-center gap-3 rounded-full px-6 py-4 font-semibold text-clay hover:underline underline-offset-4">
+                Download CV
+              </a>
+            )}
           </div>
         </div>
 

@@ -6,8 +6,13 @@ export const profile = {
   monogram: "AT",
 
   // Contact details. Anything left empty is hidden on the site.
-  email: "",
+  email: "", // shows an email button and enables the mailto fallback
+  whatsapp: "", // digits only with country code, e.g. "2348012345678"
   linkedin: "", // e.g. "https://www.linkedin.com/in/username"
+  cvUrl: "", // e.g. "/Agunloye-Ayomipo-CV.pdf" (put the file in /public)
+  // Free form backend: get a key at https://web3forms.com (enter her email there).
+  // With a key, the form delivers straight to her inbox without opening an email app.
+  web3formsKey: import.meta.env.VITE_WEB3FORMS_KEY ?? "",
 
   role: "International Relations graduate",
   openTo: ["Graduate roles", "Fellowships", "Research collaborations"],

@@ -3,6 +3,7 @@ import { initials, profile } from "../data/profile";
 import { Arrow, LinkedIn, Mail } from "./Icons";
 
 export default function Contact() {
+  const hasEmail = Boolean(profile.email);
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
@@ -22,7 +23,7 @@ export default function Contact() {
       <div className="relative max-w-[1150px] mx-auto">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-14 lg:gap-20">
           <div>
-            <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">05 — Contact</div>
+            <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">06 — Contact</div>
             <h2 className="reveal font-display text-[clamp(3rem,7.5vw,6.5rem)] leading-[0.96] mt-4" style={{ ["--d" as string]: "60ms" }}>
               Let's find <em className="text-clay">common ground.</em>
             </h2>
@@ -31,9 +32,11 @@ export default function Contact() {
             </p>
 
             <div className="reveal mt-10 flex flex-wrap gap-3" style={{ ["--d" as string]: "180ms" }}>
-              <a href={`mailto:${profile.email}`} className="group inline-flex items-center gap-3 rounded-full bg-clay text-white px-7 py-4 font-semibold hover:brightness-110 transition">
-                <Mail className="w-5 h-5" /> {profile.email}
-              </a>
+              {hasEmail && (
+                <a href={`mailto:${profile.email}`} className="group inline-flex items-center gap-3 rounded-full bg-clay text-white px-7 py-4 font-semibold hover:brightness-110 transition">
+                  <Mail className="w-5 h-5" /> {profile.email}
+                </a>
+              )}
               {profile.linkedin && (
                 <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 rounded-full border border-paper/30 px-7 py-4 font-semibold hover:bg-paper hover:text-forest transition">
                   <LinkedIn className="w-5 h-5" /> LinkedIn
@@ -42,6 +45,7 @@ export default function Contact() {
             </div>
           </div>
 
+          {hasEmail ? (
           <form className="reveal space-y-7" style={{ ["--d" as string]: "120ms" }} onSubmit={onSubmit}>
             <label className="block">
               <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-paper/55">Your name</span>
@@ -63,6 +67,13 @@ export default function Contact() {
               Send message <Arrow className="w-6 h-6 group-hover:translate-x-1 transition" />
             </button>
           </form>
+          ) : (
+            <div className="reveal self-start rounded-[28px] border border-paper/20 p-8 md:p-10">
+              <div className="font-mono text-xs tracking-[0.2em] uppercase text-clay">Direct contact</div>
+              <p className="font-display text-4xl leading-tight mt-4">Contact form coming soon.</p>
+              <p className="mt-4 text-paper/65 leading-relaxed">Email and LinkedIn will appear here once they are added to the site.</p>
+            </div>
+          )}
         </div>
 
         <footer className="mt-20 pt-6 border-t border-paper/15 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm text-paper/55 text-center">

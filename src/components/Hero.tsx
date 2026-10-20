@@ -12,19 +12,26 @@ export default function Hero() {
         <div className="order-2 lg:order-1">
           <div className="reveal font-mono text-[11px] sm:text-xs tracking-[0.22em] uppercase text-clay flex items-center gap-3">
             <span className="w-10 h-px bg-clay" />
-            International Relations · Portfolio
+            International Relations · Student portfolio
           </div>
 
-          <h1 className="reveal font-display text-[clamp(3.2rem,9vw,7.6rem)] leading-[0.94] mt-6" style={{ ["--d" as string]: "80ms" }}>
-            Negotiating <em className="text-clay">a more peaceful</em> world.
+          <h1 className="font-display text-[clamp(3.6rem,10.5vw,8.4rem)] leading-[0.9] mt-6">
+            {profile.name.split(" ").map((w, i) => (
+              <span key={w} className="reveal block" style={{ ["--d" as string]: `${i * 110}ms` }}>
+                {i === 1 ? <em className="text-clay">{w}</em> : w}
+              </span>
+            ))}
           </h1>
 
-          <p className="reveal mt-8 max-w-xl text-lg md:text-xl text-muted leading-relaxed" style={{ ["--d" as string]: "160ms" }}>
-            <strong className="text-ink font-semibold">{profile.name}</strong>, an {profile.role} specialising in
-            diplomacy, negotiation skills, and peace &amp; conflict resolution.
+          <p className="reveal font-display italic text-3xl md:text-4xl mt-7 text-forest-soft" style={{ ["--d" as string]: "360ms" }}>
+            Negotiating a more peaceful world.
           </p>
 
-          <div className="reveal mt-10 flex flex-col sm:flex-row gap-4" style={{ ["--d" as string]: "240ms" }}>
+          <p className="reveal mt-5 max-w-xl text-lg text-muted leading-relaxed" style={{ ["--d" as string]: "440ms" }}>
+            An {profile.role} specialising in diplomacy, negotiation skills, and peace &amp; conflict resolution.
+          </p>
+
+          <div className="reveal mt-9 flex flex-col sm:flex-row gap-4" style={{ ["--d" as string]: "520ms" }}>
             <a href="#focus" className="group inline-flex items-center justify-center gap-3 rounded-full bg-forest text-paper px-8 py-4 font-semibold hover:bg-forest-soft transition">
               Explore my focus <ArrowDown className="w-5 h-5 group-hover:translate-y-0.5 transition" />
             </a>
@@ -47,6 +54,11 @@ export default function Hero() {
                 decoding="async"
                 className="w-full h-full object-cover object-[50%_18%]"
               />
+            </div>
+
+            <div className="absolute top-10 -right-3 sm:-right-8 z-10 rounded-2xl bg-paper shadow-xl px-4 py-3 border border-ink/10">
+              <div className="font-mono text-[10px] tracking-[0.18em] uppercase text-muted">Intern</div>
+              <div className="font-display text-xl leading-tight">NASC · Abuja</div>
             </div>
 
             <div className="absolute -bottom-8 -left-8 sm:-left-12 w-32 h-32 rounded-full bg-paper shadow-xl flex items-center justify-center">

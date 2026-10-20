@@ -6,6 +6,7 @@ import Focus from "./components/Focus";
 import Hero from "./components/Hero";
 import Marquee from "./components/Marquee";
 import Rail from "./components/Rail";
+import WorldMap from "./components/WorldMap";
 import { useReveal } from "./hooks";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Marquee />
         <Focus />
         <Experience />
+        <WorldMap />
         <Approach />
         <About />
         <Contact />

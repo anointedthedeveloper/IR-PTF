@@ -30,7 +30,7 @@ export default function About() {
         </div>
 
         <div>
-          <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">04 — About</div>
+          <div className="reveal font-mono text-xs tracking-[0.22em] uppercase text-clay">05 — About</div>
           <h2 className="reveal font-display text-5xl md:text-7xl leading-[0.98] mt-4" style={{ ["--d" as string]: "60ms" }}>
             The person behind the <em className="text-clay">briefing</em>
           </h2>

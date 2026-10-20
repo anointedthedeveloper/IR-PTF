@@ -17,14 +17,18 @@ export default function Rail() {
         <div>
           <a href="#top" className="flex items-center gap-3 group" aria-label="Back to top">
             <Monogram className="w-11 h-11 text-paper group-hover:rotate-12 transition-transform" />
-            <span className="font-mono text-[11px] tracking-[0.22em] uppercase text-paper/60 leading-tight">
-              Portfolio<br />IR · {new Date().getFullYear()}
+            <span className="font-mono text-[11px] tracking-[0.2em] uppercase text-paper/65 leading-snug">
+              Student<br />Portfolio
             </span>
           </a>
 
           <div className="mt-14">
-            <div className="font-display text-4xl leading-[1.05]">{profile.name}</div>
-            <div className="mt-3 text-sm text-paper/65">{profile.role}</div>
+            <div className="font-display text-[2.6rem] leading-[1.02]">
+              {profile.name.split(" ").map((w, i) => (
+                <span key={w} className={`block ${i === 1 ? "italic text-sage" : ""}`}>{w}</span>
+              ))}
+            </div>
+            <div className="mt-4 font-mono text-[11px] tracking-[0.18em] uppercase text-paper/60">{profile.role}</div>
           </div>
 
           <nav className="mt-14 relative" aria-label="Sections">
@@ -57,9 +61,12 @@ export default function Rail() {
             Open to {profile.openTo[0].toLowerCase()} &amp; more
           </div>
           <div className="flex items-center gap-3">
-            <a href={`mailto:${profile.email}`} aria-label="Email" className="w-11 h-11 rounded-full border border-paper/25 flex items-center justify-center hover:bg-paper hover:text-forest transition">
-              <Mail className="w-5 h-5" />
-            </a>
+            {profile.email && (
+              <a href={`mailto:${profile.email}`} aria-label="Email" className="w-11 h-11 rounded-full border border-paper/25 flex items-center justify-center hover:bg-paper hover:text-forest transition">
+                <Mail className="w-5 h-5" />
+              </a>
+            )}
+            <a href="#contact" className="text-sm font-semibold underline underline-offset-4 decoration-paper/30 hover:decoration-clay transition">Get in touch</a>
             {profile.linkedin && (
               <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-11 h-11 rounded-full border border-paper/25 flex items-center justify-center hover:bg-paper hover:text-forest transition">
                 <LinkedIn className="w-5 h-5" />
@@ -75,7 +82,7 @@ export default function Rail() {
         <div className="flex items-center justify-between px-5 h-16 bg-forest/95 backdrop-blur text-paper">
           <a href="#top" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
             <Monogram className="w-9 h-9" />
-            <span className="font-display text-2xl">{profile.name}</span>
+            <span className="font-display text-2xl">{profile.shortName}</span>
           </a>
           <button
             type="button"

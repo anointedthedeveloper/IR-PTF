@@ -1,12 +1,14 @@
 // Everything personal lives here. Edit this file and the whole site updates.
 
 export const profile = {
-  // TODO: replace with her real details
-  name: "Your Name",
-  email: "your.email@example.com",
-  linkedin: "", // e.g. "https://www.linkedin.com/in/username" (hidden when empty)
+  name: "Agunloye Ayomipo Testimony",
+  shortName: "Ayomipo Agunloye",
+  monogram: "AT",
 
-  headline: "Negotiating a more peaceful world.",
+  // Contact details. Anything left empty is hidden on the site.
+  email: "",
+  linkedin: "", // e.g. "https://www.linkedin.com/in/username"
+
   role: "International Relations student",
   openTo: ["Internships", "Fellowships", "Research collaborations"],
 
@@ -60,6 +62,15 @@ export const profile = {
     },
   ],
 
+  toolkit: [
+    { icon: "ear", title: "Active listening", body: "Hearing what is meant, not only what is said." },
+    { icon: "globe", title: "Cross-cultural fluency", body: "Reading context before drawing conclusions." },
+    { icon: "scales", title: "Structured argument", body: "Clear, fair, evidence-led reasoning on paper and aloud." },
+    { icon: "search", title: "Research & analysis", body: "Turning complex events into clear, usable insight." },
+    { icon: "handshake", title: "Mediation mindset", body: "Finding the overlap between opposing interests." },
+    { icon: "shield", title: "Discretion & protocol", body: "Handling formal settings and sensitive matters with care." },
+  ],
+
   about: [
     "I'm an International Relations student drawn to the moments when people at odds choose to talk. My focus is diplomacy, negotiation and peace and conflict resolution: how disagreements are managed, how trust is built, and how agreements hold.",
     "In August 2025 I interned at the National Assembly Service Commission in Abuja, which gave me a close view of public institutions at work. I'm looking to keep learning through internships, fellowships and research that put theory into practice.",
@@ -73,14 +84,10 @@ export const profile = {
 export const nav = [
   { id: "focus", label: "Focus" },
   { id: "experience", label: "Experience" },
+  { id: "world", label: "World" },
   { id: "approach", label: "Approach" },
   { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
 
-export const initials = profile.name
-  .split(" ")
-  .map((p) => p[0])
-  .slice(0, 2)
-  .join("")
-  .toUpperCase();
+export const initials = profile.monogram;

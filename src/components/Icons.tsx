@@ -1,3 +1,5 @@
+import type { JSX } from "react";
+
 type P = { className?: string };
 
 export const Arrow = ({ className = "" }: P) => (
@@ -58,3 +60,32 @@ export const Monogram = ({ className = "" }: P) => (
     <circle cx="45" cy="19" r="5" fill="var(--color-clay)" />
   </svg>
 );
+
+const stroke = { fill: "none", stroke: "currentColor", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" } as const;
+
+export function ToolIcon({ name, className = "" }: { name: string; className?: string }) {
+  const paths: Record<string, JSX.Element> = {
+    ear: <path d="M7 10a5 5 0 0 1 10 0c0 3-2 3.5-2.5 5.5S13 20 11 20a3 3 0 0 1-3-3M10 10a2 2 0 0 1 4 0" />,
+    globe: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <ellipse cx="12" cy="12" rx="4" ry="9" />
+        <path d="M3 12h18" />
+      </>
+    ),
+    scales: <path d="M12 4v16M7 20h10M5 8h14M5 8l-3 7a3.5 3.5 0 0 0 6 0L5 8zm14 0-3 7a3.5 3.5 0 0 0 6 0l-3-7z" />,
+    search: (
+      <>
+        <circle cx="11" cy="11" r="6.5" />
+        <path d="m16 16 4.5 4.5" />
+      </>
+    ),
+    handshake: <path d="M3 12l4-4 4 1.5L14 7l4 3.5 3 1.5M3 12l5 5a2 2 0 0 0 3 0l.5-.5M11.5 16.5l1.5 1.5a2 2 0 0 0 3-.5l1-2M21 12l-4 4" />,
+    shield: <path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3zM9 12l2 2 4-4" />,
+  };
+  return (
+    <svg viewBox="0 0 24 24" className={className} {...stroke} aria-hidden="true">
+      {paths[name]}
+    </svg>
+  );
+}
